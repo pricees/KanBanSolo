@@ -18,7 +18,13 @@ module KanBanSolo
     end
 
 
-    def draw
+    def redraw
+      draw(true)
+    end
+
+    def draw(refresh = false)
+      @window = @text_box = nil if refresh
+
       window.clear
       window.box("|", "-")
 
