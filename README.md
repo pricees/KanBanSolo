@@ -1,6 +1,10 @@
+KanBanSolo
+==========
+
+Kan Ban project management implementation using ruby, curses library.
 # KanBanSolo
 
-TODO: Write a gem description
+Basic KanBan board in ncurses.  I am building this because there a very few single-user KanBan boards and I want one I can use from the terminal
 
 ## Installation
 
