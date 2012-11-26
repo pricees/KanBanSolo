@@ -16,7 +16,11 @@ module KanBanSolo
     end
 
     def window
-      @window ||= parent.subwin(height, width, y, x)
+      @window ||= begin
+                    w = parent.subwin(height, width, y, x)
+                    w.keypad(true)
+                    w
+                  end
     end
 
     def draw
@@ -26,8 +30,12 @@ module KanBanSolo
       window.refresh
     end
 
+    def input_handler &block
+      @input_handler = block
+    end
+
     def handle_input
-      window.getch
+      @input_handler[self]
     end
   end
 end
